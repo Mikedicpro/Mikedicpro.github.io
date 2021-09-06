@@ -15,12 +15,20 @@
 /**
  * @returns {number} 100 times the input
  */
- function times100(){
- }
+ function times100(n){
+    return n*100;
+}
+ 
 
 
 /**
  * @returns {Array} creates a new array with function mapped to each element
  */
-function myMap(){
+
+function myMap(arr1,double,hunredTimes){
+    for(let i=0;i<arr.length;i++){
+        arr[i]*=100;
+    }
+    return arr1;
+
 }
