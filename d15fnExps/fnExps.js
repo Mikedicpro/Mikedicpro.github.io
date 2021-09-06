@@ -25,6 +25,17 @@
  * @returns {Array} creates a new array with function mapped to each element
  */
 
+ let arr=[2,3,4,5];
+
+ function doubleArr(arr){
+     for (let i =0;i<arr.length;i++){
+         arr[i]*=2;// arr[i]=arr[i]*2
+     }
+     return arr;
+   // console.log("Expected result ..2,3,4,5 : will be 4,6,8,10" +doubleArr(arr));
+ }
+console.log("Expected result ..2,3,4,5 : will be 4,6,8,10 = " + doubleArr(arr));
+
 function myMap(arr1,double,hunredTimes){
     for(let i=0;i<arr.length;i++){
         arr[i]*=100;
@@ -32,3 +43,6 @@ function myMap(arr1,double,hunredTimes){
     return arr1;
 
 }
+
+console.log("Expected result multiply by 2& then *100..400,600,800,1000 will be =   "+myMap(arr));
+
