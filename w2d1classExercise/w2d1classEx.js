@@ -20,10 +20,13 @@ const prompt = require("prompt-sync")();
     }; 
 const pproperties = ["one","two","threee","four"];
 
-for (let i=1;i<=pproperties.length;i++){
-   // console.log(pproperties.length);
+for (let i=1;i<=nnumbers.length;i++){
+    console.log(nnumbers[i]);
+    console.log(pproperties.i);
 }
- console.log(nnumbers.one);
- 
+console.log("resultv: " +nnumbers.four);
+
+//console.log(nnumbers.one);
+ console.log("prperties : "+pproperties.nnumbers)
  console.log(nnumbers.three);
 
