@@ -9,15 +9,16 @@ const findTitles = myExports.findTitles;  //do this for all of the functions use
 /*
 Write a JavaScript program that will accept title, author, and libraryID values from an HTML page and create new book objects for each entry.  
 •	Before creating the webpage first write and test the following JavaScript functions:
-o	addBook, which will take title, author, and libraryID as inputs.  It will create a new book object and add it to the library, which will be represented as a global array named libraryBooks.  addBook should return the newly created book.
+o	addBook, which will take title, author, and libraryID as inputs.  It will create a new book object and add it to the library, 
+which will be represented as a global array named libraryBooks.  addBook should return the newly created book.
 o	findTitles, which will find all the book titles in libraryBooks and return them in an alphabetically ordered array.
 o	findAuthors, which will find all the authors in libraryBooks and return them in an alphabetically ordered array.
 o	findIDs, which will find all the libraryIDs in libraryBooks and return them in an alphabetically ordered array.
 */
 
 describe("library", function () {
-
     //This should be used as the "library database" for testing--included in app.js
+
     // let library = [
     //     { title: "The Road Ahead", author: "Bill Gates", libraryID: 1254 },
     //     { title: "Walter Isaacson", author: "Steve Jobs", libraryID: 4264 },
