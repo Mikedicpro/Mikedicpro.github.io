@@ -12,15 +12,19 @@ module.exports = {inArray, inBetween, byField, makeArmy }; //add all of your fun
  */
 function inArray(arr) {
     return function(value){
-        for(let i=0;i<=arr.length;i++){
-            if (arr[i]==value){
-                return true;
-            }
+        // for(let i=0;i<=arr.length;i++){
+        //     if (arr[i]==value){
+        //         return true;
+        //     }
+
+return arr.includes(value);
+
         }
+   
     }
 
   
-}
+
 
 /**
  * 
@@ -31,7 +35,7 @@ function inArray(arr) {
  */
 function inBetween(low, high) {
     return function (num) {
-        if (num >= low && num <= high) {
+        if (num >= low && num <=high) {
             return true;
         } else {
             return false;
@@ -45,6 +49,14 @@ function inBetween(low, high) {
  * @returns {Function} sorting function
  */
 function byField(fieldName){
+    return function(a,b){
+        if(a[fieldName]>b[fieldName]) 
+        return 1;
+        else
+        return-1;
+         
+
+    }
 
 }
 
@@ -53,10 +65,30 @@ function byField(fieldName){
  * @returns {Function} closure that returns it's number
  */
 function makeArmy() {
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        let array = function () {
+            return i;
+        };
+        arr.push(array);
+    }
 
-  }
+    return arr;
+}
 
-  let army = makeArmy();
+    
+//     let shooter = [];
+    
+//     for(let i=0; i<10; i++){
+//         let shooters = function(){
+//             return[i];
+//         }   
+//         shooter.push(shooters); 
+//     };
+//     return shooter;
+//   }
+
+//   let army = makeArmy();
   
   //army[0](); // the shooter number 0 shows 10
-  //army[5](); // and number 5 also outputs 10...
+  //console.log( army[3]()); // and number 5 also outputs 10...
