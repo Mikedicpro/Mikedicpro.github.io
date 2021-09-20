@@ -12,9 +12,7 @@ Make the transactionsDB private by making it a local variable in the makeBank fu
 /**
  * @returns {bank} factory function that builds and returns bank object
  */
-function makeBank(){
-    //implement this
-//     function makeBank() {
+// function makeBank() {
 //         const transactionsDB = [
 //             { customerId: 1, customerTransactions: [10, 50, -40] },
 //             { customerId: 2, customerTransactions: [10, 10, -10] },
@@ -33,60 +31,35 @@ function makeBank(){
 //         };
 //         bank.bankBalance = function () {
 //             let total = 0;
-//             return function findbalance() {
-//                 for (const trans of this.transactionsDB) {
-//                     total += this.getBalance(trans.customerId);
-//                 }
-//                 return total;
-//             };
+//             for (const trans of transactionsDB) {
+//                 total += bank.getBalance(trans.customerId);
+//             }
+//             return total;
 //         };
 //         return bank;
-
 // }
-// const bank = { transactionsDB: [], };
-// bank.transactionsDB = [
-//     { customerId: 1, customerTransactions: [10, 50, -40] },
-//     { customerId: 2, customerTransactions: [10, 10, -10] },
-//     { customerId: 3, customerTransactions: [5, -5, 55] }];
 
-// bank.getBalance = function (id) {
-//     const customer = bank.transactionsDB.find(customer => customer.customerId === id);
-//     let balance = 0;
-//     for (const trans of customer.customerTransactions) { balance += trans; }
-//     return balance;
-// };
-
-// bank.bankBalance = function () {
-//     let total = 0;
-//     for (const trans of this.transactionsDB) {
-//         total += this.getBalance(trans.customerId);
-//     }
-//     return total;
-// };
-// }
 function makeBank() {
     const transactionsDB = [
-    { customerId: 1, customerTransactions: [10, 50, -40] },
-    { customerId: 2, customerTransactions: [10, 10, -10] },
-    { customerId: 3, customerTransactions: [5, -5, 55] },
-    ];
+        { customerId: 1, customerTransactions: [10, 50, -40] },
+        { customerId: 2, customerTransactions: [10, 10, -10] },
+        { customerId: 3, customerTransactions: [5, -5, 55] }];
+
     const bank = {};
     bank.getBalance = function (id) {
-    const customer = transactionsDB.find(
-    (customer) => customer.customerId === id
-    );
-    let balance = 0;
-    for (const trans of customer.customerTransactions) {
-    balance += trans;
-    }
-    return balance;
+        const customer = transactionsDB.find(customer => customer.customerId === id);
+        let balance = 0;
+        for (const trans of customer.customerTransactions) { balance += trans; }
+        return balance;
     };
+
     bank.bankBalance = function () {
-    let total = 0;
-    for (const trans of transactionsDB) {
-    total += bank.getBalance(trans.customerId);
-    }
-    return total;
+        let total = 0;
+        for (const trans of transactionsDB) {
+            total += bank.getBalance(trans.customerId);
+        }
+        return total;
     };
+
     return bank;
-   };}
+}
